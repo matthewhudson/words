@@ -88,7 +88,8 @@ var getAnagrams = function(lettersArray){
 	}
 	var allAnagrams = [];
 	for(var nodeNdx=0; nodeNdx<frontier.length; nodeNdx++){
-		allAnagrams = _.union(allAnagrams, frontier[nodeNdx].words);
+		for(var wordNdx=0; wordNdx<frontier[nodeNdx].words.length; wordNdx++)
+			allAnagrams.push(frontier[nodeNdx].words[wordNdx]);
 	}
 	return allAnagrams;
 }
