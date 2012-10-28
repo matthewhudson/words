@@ -1,0 +1,12 @@
+{
+    "name": "word-generator",
+    "version": "0.0.1",
+    "engines": {
+        "node": "0.6.12",
+        "npm": "1.1.9"
+    },
+    "dependencies": {
+        "express": "3.0.0",
+		"underscore": "1.4.2"
+    }
+}
