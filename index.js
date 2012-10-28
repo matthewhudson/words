@@ -31,7 +31,6 @@ var readWordsFile = function(callback, finished){
 		callback(""+line);
 	});
 	readStream.on('end', function(){
-		console.log("Done Reading.");
 		finished();
 	});
 }
@@ -71,22 +70,53 @@ var generateTree = function(complete) {
 	);
 }
 
+var getAnagrams = function(lettersArray){
+	var hist = histogramify(lettersArray);
+	var rootNode = tree;
+	var frontier = [rootNode];
+	for(var ndx=0; ndx<alphabet.length; ndx++){
+		var letter = alphabet[ndx];
+		var freq = hist[letter];
+		var newFrontier = [];
+		for(var nodeNdx=0; nodeNdx<frontier.length; nodeNdx++){
+			var node = frontier[nodeNdx];
+			for(var i=0; i<=freq; i++)
+				if(!!node[i])
+					newFrontier.push(node[i]);
+		}
+		frontier = newFrontier;
+	}
+	var allAnagrams = [];
+	for(var nodeNdx=0; nodeNdx<frontier.length; nodeNdx++){
+		allAnagrams = _.union(allAnagrams, frontier[nodeNdx].words);
+	}
+	return allAnagrams;
+}
+
 var indexHandler = function (request, response) {
-	var letters = [];
 
 	if (!_.has(request.query, 'letters')) {
 		response.send(404);
 		return;
 	}
-	letters = request.query.letters.toLowerCase().split(',');
-	letters = _.sortBy(letters, function(letter){return letter;});
-
-	generateTree();
 	
+	var word = request.query.letters.toLowerCase().split(',').join("");
+	
+	console.log("Looking up anagrams of '"+word+"'");
+	var init = new Date();
+
+	var anagrams = getAnagrams(word);
+
+	console.log("Lookup for '"+word+"' took "+(new Date() - init)+"ms to complete");
+
+	response.json(_.sortBy(anagrams, function(anagram){return anagram.length}));
 };
 
 app.get('/', indexHandler);
 
-app.listen(port, function () {
-	console.log("Word Generator: Listening on " + port);
+//generate tree (and when complete, start listening for requests)
+generateTree(function(){
+	app.listen(port, function () {
+		console.log("Word Generator: Listening on " + port);
+	});
 });
