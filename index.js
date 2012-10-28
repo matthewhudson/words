@@ -36,6 +36,15 @@ var readWordsFile = function(callback, finished){
 	});
 }
 
+var histogramify = function(word){
+	var histogram = {};
+	for(var ndx=0; ndx<alphabet.length; ndx++)
+		histogram[alphabet[ndx]] = 0;
+	for(var ndx=0; ndx<word.length; ndx++)
+		histogram[word[ndx]]++;
+	return histogram;
+}
+
 var tree = {};
 var generateTree = function() {
 	readWordsFile(
