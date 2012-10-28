@@ -46,15 +46,27 @@ var histogramify = function(word){
 }
 
 var tree = {};
-var generateTree = function() {
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var generateTree = function(complete) {
+	console.log("Generating anagram tree...");
 	readWordsFile(
 		//for each line in the file, this function is called
 		function(word){
-			
+			var hist = histogramify(word);
+			var curNode = tree;
+			for(var ndx=0; ndx<alphabet.length; ndx++){
+				var letter = alphabet[ndx];
+				var freq = hist[letter];
+				if(!curNode[freq])
+					curNode[freq] = {};
+				curNode = curNode[freq];
+			}
+			if(!curNode.words) curNode.words = [];
+			curNode.words.push(word);
 		},
-		//this function is called at the end of read
 		function(){
-			
+			console.log("Tree constructed. Ready for requests.");
+			complete();
 		}
 	);
 }
