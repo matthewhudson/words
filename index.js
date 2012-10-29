@@ -110,7 +110,7 @@ var indexHandler = function (request, response) {
 
 	console.log("Lookup for '"+word+"' took "+(new Date() - init)+"ms to complete");
 
-	response.json(_.sortBy(anagrams, function(anagram){return anagram.length}));
+	response.json(_.sortBy(anagrams, function(anagram){return -anagram.length}));
 };
 
 app.get('/', indexHandler);
