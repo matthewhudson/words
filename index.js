@@ -45,7 +45,7 @@ var histogramify = function(word){
 }
 
 var tree = {};
-var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var alphabet = "jqxzwkvfybhgmpudlotnraise";
 var generateTree = function(complete) {
 	console.log("Generating anagram tree...");
 	readWordsFile(
