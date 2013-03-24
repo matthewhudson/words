@@ -1,4 +1,5 @@
 fs 		= require 'fs'
+path  = require 'path'
 lazy 	= require 'lazy'
 _ 		= require 'underscore'
 
@@ -8,7 +9,8 @@ class exports.WordGenerator
   alphabet = 'jqxzwkvfybhgmpudclotnraise'
   
   readWordsFile: (callback, finished) ->
-    readStream = fs.createReadStream '/Users/hudson/Dropbox/code/word-generator/words.txt'
+    filepath = path.join __dirname, '../vendor/words.txt'
+    readStream = fs.createReadStream filepath
     input = new lazy readStream 
     input.lines.forEach (line) ->
       callback '' + line
