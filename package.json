@@ -1,5 +1,5 @@
 {
-    "name": "word-generator",
+    "name": "words",
     "version": "0.1.1",
     "description": "Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble.",
     "homepage": "https://github.com/matthewhudson/word-generator",
