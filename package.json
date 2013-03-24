@@ -20,7 +20,6 @@
         "node": "0.8.17"
     },
     "dependencies": {
-        "express": "3.0.0",
         "underscore": "1.4.2",
         "lazy": "1.0.8"
     }
