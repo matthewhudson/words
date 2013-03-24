@@ -1,12 +1,14 @@
 {
     "name": "words",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble.",
     "homepage": "https://github.com/matthewhudson/word-generator",
     "keywords": [
         "words",
         "letters",
-        "anagrams"
+        "anagrams",
+        "dictionary",
+        "dict"
     ],
     "author": "Matthew Hudson <matt@matthewghudson.com>",
     "bugs": "https://github.com/matthewhudson/word-generator/issues",
