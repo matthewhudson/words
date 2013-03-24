@@ -1,9 +1,23 @@
 {
     "name": "word-generator",
-    "version": "0.0.1",
+    "version": "0.1.1",
+    "description": "Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble.",
+    "homepage": "https://github.com/matthewhudson/word-generator",
+    "keywords": [
+        "words",
+        "letters",
+        "anagrams"
+    ],
+    "author": "Matthew Hudson <matt@matthewghudson.com>",
+    "bugs": "https://github.com/matthewhudson/word-generator/issues",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/matthewhudson/word-generator.git"
+    },
+    "main": "index",
+    "license": "MIT",
     "engines": {
-        "node": "0.6.12",
-        "npm": "1.1.9"
+        "node": "0.8.17"
     },
     "dependencies": {
         "express": "3.0.0",
