@@ -1,10 +1,10 @@
-# [WORD GENERATOR](http://www.matthewghudson.com/projects/word-generator/)
+# [WORDS](https://thematthewhudson.com/words/)
 
-Word Generator in a Node.js module that generates a list of words from a word, or a few letters. It's helpful for providing hints while playing games like Letterpress, Words with Friends, and Scrabble. 
+`Words` in a Node.js module that generates a list of words from a word, or a few letters. It's helpful for providing hints while playing games like Letterpress, Words with Friends, and Scrabble.
 
 ### Web Application Demo
 
-<a href="http://www.matthewghudson.com/projects/word-generator/"><img src="http://media.tumblr.com/tumblr_mckych52sB1qzs7v7.png" /></a>
+<a href="https://thematthewhudson.com/words/"><img src="http://media.tumblr.com/tumblr_mckych52sB1qzs7v7.png" /></a>
 
 ## Installation
 
