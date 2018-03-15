@@ -1,0 +1,505 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Matthew Hudson / Word Generator - Cheat when playing games like word games and apps like Letterpress, Words with Friends, and Scrabble.</title>
+
+  <meta name="description" content="Word Generator provides hints to help you cheat when playing games like Letterpress, Words with Friends, and Scrabble. Created by Matthew Hudson. I do my best to say, think, find, and make awesome things.">
+  <meta name="author" content="Matthew Hudson">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+  <meta property="fb:admins" content="25102034" />
+  <meta property="og:site_name" content="Matthew Hudson" />
+  <meta property="og:url" content="https://thematthewhudson.com/words/" />
+  <meta property="og:title" content="Word Generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble. Created by Matthew Hudson. I do my best to say, think, find, and make awesome things." />
+  <meta property="og:image" content="http://media.tumblr.com/tumblr_mckych52sB1qzs7v7.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="canonical" href="https://thematthewhudson.com/words/" />
+  <link rel="author" href="https://plus.google.com/103902048207396109122/posts"/>
+
+  <link rel="shortcut icon" href="https://thematthewhudson.com/favicon.ico">
+
+  <link rel="stylesheet" href="buttons.css" >
+
+    <style type="text/css">
+    html, body {
+      min-height:100%;
+      height:100%;
+      padding:0;
+      margin:0;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      text-shadow: 0 1px white;
+      color:#222;
+      background-color:#FCFAF0;
+
+      /* Disable certain interactions on touch devices */
+      -webkit-touch-callout: none;
+      -webkit-text-size-adjust: none;
+      -webkit-highlight: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+     }
+
+    h1, h2, h3, h4, h5, h6, p, a {
+      text-align:center;
+      font-weight: lighter;
+    }
+    ::selection {
+      background: #FEE9CC;
+      color: #222;
+      text-shadow: none;
+    }
+    h1 {
+      font-family:"Oxygen",serif;
+      color:#90150E;
+      margin: 0px auto;
+      font-size: 3.5em;
+      letter-spacing: 4px;
+      font-weight:bold;
+    }
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+      margin-top:0px;
+    }
+
+    .container-outer {
+      width: 100%;
+      padding: 0;
+      display: table;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+    .container-middle {
+      padding: 0;
+      vertical-align: middle;
+      display: table-cell;
+      margin: 0;
+    }
+    .container-inner {
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .container-inner .padding {
+      padding: 20px 10px;
+    }
+    ul#letters, ul#buttons {
+      margin:0 auto .25em auto;
+      padding:0;
+      text-align: center;
+    }
+    ul#buttons li {
+      display:inline;
+      padding:10px;
+    }
+    #overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 9999999 !important;
+      display:none;
+    }
+    #overlay b {
+      font-size:24em;
+      text-align:center;
+      display:block;
+    }
+    #letters {
+      font-size:3em;
+    }
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      margin: 0.5em 0;
+      padding: 0;
+    }
+    #footer > iframe {
+      padding-top: 8px;
+      padding-bottom:5px;
+      margin: 0 auto;
+      display: block;
+      width:218px !important;
+    }
+    .btn {
+      text-decoration:none;
+      padding: 5px 25px;
+      font-size: 1em;
+    }
+    .btn small {
+      display: block;
+      font-weight: bold;
+      font-size: 0.75em;
+    }
+    #buttons {
+      margin-bottom:1.25em !important;
+    }
+      #words {
+         margin-bottom:2em !important;
+      color:#000;
+       }
+    #letters li {
+      border: 1px solid #DDD;
+      background: white;
+      text-align: center;
+      width: 65px;
+      height: 65px;
+      display: inline-block;
+      line-height: 65px;
+      margin-right: 15px;
+      padding:0px !important;
+      margin-bottom:.25em;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    #letters :last-child {
+      margin-right:0 !important;
+    }
+    .input {
+      margin:0 auto;
+      border-bottom:1px solid #DDD;
+      margin-bottom: 1em;
+      color:#000;
+      min-height:75px;
+      position:relative;
+    }
+    .input input {
+      outline: none;
+      background: transparent;
+      border: 0;
+      line-height: 100%;
+      text-align:center;
+      width:100%;
+      height: 100%;
+      position:absolute;
+      bottom:1em;
+
+    }
+    .input input,
+    .input input:focus {
+      color: #000
+    }
+    p.hint {
+      font-weight:bold;
+    }
+    #words p {
+      padding: 0 10px;
+      padding-bottom: 30px;
+    }
+    .fb-like {
+      margin: 0 auto;
+      display: block !important;
+      width: 85px;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+
+<div id="overlay">
+  <div class="container-outer">
+    <div class="container-middle">
+      <div class="container-inner">
+        <div class="padding">
+          <b id="letter"></b>
+          <div id="spinner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-outer">
+  <div class="container-middle">
+    <div class="container-inner">
+      <div class="padding">
+        <div class="input">
+          <input type="text" name="letters" autocapitalize="off"
+ autocorrect="off" autofocus="autofocus" />
+          <ul id="letters"></ul>
+        </div>
+
+        <p class="hint">Type letters then submit to generate possible words.</p>
+
+        <ul id="buttons">
+          <li>
+            <a href="#" id="submit" class="btn btn-primary">
+              Submit
+              <small>[ ENTER ]</small>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="clear" class="btn">
+              Clear
+              <small>[ ESCAPE ]</small>
+            </a>
+          </li>
+        </ul>
+        <div id="words"><p></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="fb-root"></div>
+    <div class="fb-like" data-href="https://thematthewhudson.com/words/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+    <a href="https://twitter.com/matthewgh" class="twitter-follow-button" data-show-count="true">Follow @matthewgh</a>
+  </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="spin.min.js"></script>
+<script src="device.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      var $input = $('input');
+
+      focusInput();
+      adjustInputHeight();
+
+      if (device.ios()) {
+        document.title = 'Wordinator';
+      }
+
+      if (device.mobile()) {
+        $('#buttons small').remove();
+      }
+
+      $(document).keydown(function (evt) {
+
+        hideInput();
+
+        evt = evt || window.event;
+        var charCode = evt.which || evt.keyCode;
+        var charStr = String.fromCharCode(charCode);
+
+        // LETTERS A-Z
+        if (/[a-z]/i.test(charStr)) {
+          $('#letters').append('<li>' + charStr + '</li>');
+          emphasizeLetter(charStr)
+        }
+
+        // BACKSPACE
+        if (charCode === 8) {
+          evt.preventDefault();
+          console.log("BACKSPACE");
+          if (!$('#letters li').length) {
+            focusInput();
+          }
+          adjustInputHeight();
+          $('#letters li:last').remove();
+        }
+
+        // ENTER
+        if (charCode === 13) {
+          submitLetters();
+        }
+
+        // ESCAPE
+        if (charCode === 27) {
+          clearLetters();
+        }
+      });
+
+      $("#submit").click(function (ev) {
+        ev.preventDefault();
+
+        submitLetters();
+
+        return false;
+      });
+
+      $("#clear").click(function (ev) {
+        ev.preventDefault();
+
+        clearLetters();
+
+        return false;
+      });
+
+      $(".input").click(function (ev) {
+        ev.preventDefault();
+
+        focusInput();
+
+        return false;
+      });
+
+      function focusInput() {
+        console.log("focusInput() -> showing input")
+        //$input.css('color', '#000');
+        $input.val('');
+        //$input.css('text-indent', '0px');
+
+
+
+        // Only show blinking caret if no letters are on screen.
+        if ($('#letters li').length) {
+          $input.css('visibility', 'hidden');
+          $input.css('color', 'transparent');
+        } else {
+          //$input.css('visibility', 'visible');
+        }
+        $input.css('visibility', 'visible');
+
+        adjustInputHeight();
+        $input.focus();
+
+      }
+
+      function hideInput() {
+        //$input.css('color', 'transparent');
+        $input.css('visibility', 'hidden');
+        //$input.css('text-indent', '-9999999px');
+        $input.val('');
+      }
+
+      function adjustInputHeight() {
+        $input.css('height', $input.parent().height() + 'px');
+        $input.css('line-height', $input.parent().height() + 'px');
+      }
+
+      function submitLetters() {
+        console.log("ENTER");
+        var letters = getLetters();
+
+        if (!letters.length) {
+          focusInput();
+          $('#words p').html('Please add some letters first!');
+          return;
+        }
+
+        // Show Loading
+        var $overlay = $('#overlay');
+        $overlay.show();
+        startSpinner();
+
+        $.getJSON("https://word-generator.herokuapp.com/", {
+          letters: letters
+        }, function (words) {
+          var html = '';
+
+          if (words.length) {
+            $.each(words, function (key, word) {
+              word = '<a href="http://dictionary.reference.com/browse/' + word + '" target="_blank">' + word + '</a>';
+              html += ', ' + word;
+            });
+
+            html = html.substring(2, html.length);
+          } else {
+            html = 'Sorry, no words found!';
+          }
+
+          $('#words p').html(html);
+
+          stopSpinner();
+          $overlay.hide();
+        });
+      }
+
+      function clearWords() {
+        $('#words p').html('');
+        //adjustInputHeight();
+      }
+
+      function clearLetters() {
+        console.log("ESCAPE");
+        $('#letters').html('');
+        focusInput();
+        clearWords();
+      }
+
+      function getLetters() {
+        var letters = [];
+        $('#letters li').each(function (index) {
+          letters.push($(this).text());
+        });
+        return letters.join(',');
+      }
+
+      function emphasizeLetter(letter) {
+        var $overlay = $('#overlay');
+        var $letter = $overlay.find('b');
+
+        $overlay.show();
+        $letter.show();
+        $letter.css('opacity', 1);
+        $letter.text(letter);
+        $letter.stop().animate({
+          opacity: 0
+        }, 350, function () {
+          $overlay.hide();
+          $letter.hide();
+        });
+      }
+
+      var elSpinner = document.getElementById('spinner'),
+         spinner = new Spinner({
+          lines: 13,
+          length: 0,
+          width: 15,
+          radius: 38,
+          corners: 1,
+          rotate: 0,
+          color: '#000',
+          speed: 1.4,
+          trail: 99,
+          shadow: false,
+          hwaccel: false,
+          className: 'spinner',
+          zIndex: 2e9,
+          top: 'auto',
+          left: 'auto'
+        });
+
+      function startSpinner() {
+        spinner.spin(elSpinner);
+      }
+
+      function stopSpinner() {
+        spinner.stop();
+      }
+    });
+
+    var _gaq=[['_setAccount','UA-24713517-1'],['_trackPageview'],['_trackPageLoadTime']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=157133677766569";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+</body>
+</html>
