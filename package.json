@@ -19,7 +19,7 @@
     "main": "index",
     "license": "MIT",
     "engines": {
-        "node": "0.8.17"
+        "node": "0.12.18"
     },
     "dependencies": {
         "underscore": "latest",
