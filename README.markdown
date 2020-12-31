@@ -1,10 +1,10 @@
-# [WORDS](https://thematthewhudson.com/words/)
+# [WORDS](https://hudson.dev/words/)
 
 `Words` in a Node.js module that generates a list of words from a word, or a few letters. It's helpful for providing hints while playing games like Letterpress, Words with Friends, and Scrabble.
 
 ### Web Application Demo
 
-<a href="https://thematthewhudson.com/words/"><img src="http://media.tumblr.com/tumblr_mckych52sB1qzs7v7.png" /></a>
+<a href="https://hudson.dev/words/"><img src="http://media.tumblr.com/tumblr_mckych52sB1qzs7v7.png" /></a>
 
 ## Installation
 
