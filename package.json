@@ -19,7 +19,7 @@
   "main": "index",
   "license": "MIT",
   "dependencies": {
-    "underscore": "latest",
+    "underscore": "1.12.1",
     "lazy": "latest"
   }
 }
