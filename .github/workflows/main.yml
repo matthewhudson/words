@@ -11,6 +11,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read 
+
     strategy:
       matrix:
         node-version: [18.x]
@@ -21,7 +24,9 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+
     - run: npm ci
+
     - run: npm run test:coverage
 
     - name: Upload coverage to Codecov
@@ -30,3 +35,9 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage/lcov.info
         fail_ci_if_error: true
+
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
