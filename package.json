@@ -1,6 +1,6 @@
 {
   "name": "words",
-  "version": "0.1.4",
+  "version": "0.0.0-development",
   "type": "module",
   "description": "Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble.",
   "homepage": "https://hudson.dev/words",
@@ -15,7 +15,7 @@
   "bugs": "https://github.com/matthewhudson/words/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/matthewhudson/words.git"
+    "url": "https://github.com/matthewhudson/words.git"
   },
   "main": "index",
   "license": "MIT",
@@ -23,13 +23,18 @@
     "lint": "standard",
     "lint:fix": "standard --fix",
     "test": "jest",
-    "test:coverage": "jest --coverage && codecov"
+    "test:coverage": "jest --coverage && codecov",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@jest/transform": "^29.5.0",
-    "babel-jest": "^29.5.0",
+    "@babel/core": "7.21.3",
+    "@babel/preset-env": "7.20.2",
+    "@jest/transform": "29.5.0",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "10.0.2",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "babel-jest": "29.5.0",
     "codecov": "3.8.3",
     "cz-conventional-changelog": "3.3.0",
     "jest": "29.5.0",
