@@ -1,6 +1,8 @@
 # [WORDS](https://hudson.dev/words/)
 
-`Words` in a Node.js module that generates a list of words from a word, or a few letters. It's helpful for providing hints while playing games like Letterpress, Words with Friends, and Scrabble.
+> The Javascript module `words` generates a list of words from a word, or a few letters. It's helpful for providing hints while playing games like Letterpress, Words with Friends, and Scrabble.
+
+[![codecov](https://codecov.io/github/matthewhudson/words/branch/main/graph/badge.svg?token=oxazfuInJ9)](https://codecov.io/github/matthewhudson/words)
 
 ### Web Application Demo
 
@@ -8,13 +10,13 @@
 
 ## Installation
 
-	$ npm [-g] install words
+ npm [-g] install words
 
 ## Usage
 
 A demo version is available at [Heroku](http://word-generator.herokuapp.com/).
 
-	curl http://word-generator.herokuapp.com/?letters=m,a,t,t,h,e,w
+ curl <http://word-generator.herokuapp.com/?letters=m>,a,t,t,h,e,w
 
 ## Suggestions
 
