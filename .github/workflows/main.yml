@@ -11,6 +11,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read 
+
     strategy:
       matrix:
         node-version: [18.x]
@@ -30,3 +33,9 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage/lcov.info
         fail_ci_if_error: true
+    - name: Release
+      uses: semantic-release/action@v1
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        prerelease: false
+        debug: true
