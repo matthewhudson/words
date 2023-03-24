@@ -3,9 +3,21 @@ import path from 'path'
 import readline from 'readline'
 
 /**
- * Word generator for anagram purposes
+ * A class for generating anagrams of words from comma-separated letters.
+ * @example
+ * // Create a new instance of WordGenerator
+ * const wordGenerator = new WordGenerator();
+ * // Generate the anagram tree
+ * await wordGenerator.generateTree();
+ * // Get the anagrams for a set of letters
+ * const lettersArray = ['t', 'e', 's', 't'];
+ * const anagrams = wordGenerator.getAnagrams(lettersArray);
+ * console.log(anagrams);
  */
 class WordGenerator {
+  /**
+   * Create a new instance of WordGenerator.
+   */
   constructor () {
     this.tree = {}
     this.alphabet = 'jqxzwkvfybhgmpudclotnraise'
@@ -59,7 +71,7 @@ class WordGenerator {
   }
 
   /**
-   * Asynchronously generates an anagram tree based on the words read from the file.
+   * Generate a tree of words from given source file.
    * @async
    * @returns {Promise<void>} Promise that resolves when the tree is generated.
    */
@@ -98,7 +110,7 @@ class WordGenerator {
   }
 
   /**
-   * Get anagrams for a given set of letters
+   * Get all possible anagrams for a given set of letters
    * @param {string[]} lettersArray - Array of letters
    * @returns {string[]} allAnagrams - Sorted array of anagrams in descending order of length
    */
