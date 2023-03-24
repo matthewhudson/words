@@ -1,6 +1,6 @@
 {
   "name": "words",
-  "version": "0.0.0-development",
+  "version": "0.1.5",
   "type": "module",
   "description": "Word Generator provides hints while playing games like Letterpress, Words with Friends, and Scrabble.",
   "homepage": "https://hudson.dev/words",
