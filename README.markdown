@@ -10,13 +10,17 @@
 
 ## Installation
 
- npm [-g] install words
+```bash
+npm [-g] install words
+```
 
 ## Usage
 
-A demo version is available at [Heroku](http://word-generator.herokuapp.com/).
+A demo version is available on online:
 
- curl <http://word-generator.herokuapp.com/?letters=m>,a,t,t,h,e,w
+```bash
+curl https://httpip.es/api/words?letters=h,e,l,l,o
+```
 
 ## Suggestions
 

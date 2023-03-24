@@ -398,10 +398,11 @@
         $overlay.show();
         startSpinner();
 
-        $.getJSON("https://word-generator.herokuapp.com/", {
+        $.getJSON("https://httpip.es/api/words", {
           letters: letters
-        }, function (words) {
+        }, function ({ data }) {
           var html = '';
+          var words = data // Brugh, do better. Just refactor the whole thing.
 
           if (words.length) {
             $.each(words, function (key, word) {
